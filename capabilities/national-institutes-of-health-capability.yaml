@@ -1,0 +1,95 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NIH RePORTER API
+  description: The NIH RePORTER API provides programmatic access to information about NIH-funded research projects and their
+    associated publications. It supports search by fiscal year, principal investigator, organization, funding agency, activity
+    code, project number, application identifier, PubMed identifier, award amount, and free-text criteria.
+  tags:
+  - National
+  - Institutes
+  - Of
+  - Health
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: national-institutes-of-health
+    baseUri: https://api.reporter.nih.gov
+    description: NIH RePORTER API HTTP API.
+    resources:
+    - name: v2-projects-search
+      path: /v2/projects/search
+      operations:
+      - name: searchprojects
+        method: POST
+        description: Search NIH-funded projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-publications-search
+      path: /v2/publications/search
+      operations:
+      - name: searchpublications
+        method: POST
+        description: Search publications associated with NIH projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: national-institutes-of-health-rest
+    description: REST adapter for NIH RePORTER API.
+    resources:
+    - path: /v2/projects/search
+      name: searchprojects
+      operations:
+      - method: POST
+        name: searchprojects
+        description: Search NIH-funded projects
+        call: national-institutes-of-health.searchprojects
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v2/publications/search
+      name: searchpublications
+      operations:
+      - method: POST
+        name: searchpublications
+        description: Search publications associated with NIH projects
+        call: national-institutes-of-health.searchpublications
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: national-institutes-of-health-mcp
+    transport: http
+    description: MCP adapter for NIH RePORTER API for AI agent use.
+    tools:
+    - name: searchprojects
+      description: Search NIH-funded projects
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: national-institutes-of-health.searchprojects
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchpublications
+      description: Search publications associated with NIH projects
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: national-institutes-of-health.searchpublications
+      outputParameters:
+      - type: object
+        mapping: $.
