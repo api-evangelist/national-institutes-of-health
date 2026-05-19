@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NIH RePORTER API — Projects
+  description: 'NIH RePORTER API — Projects. 1 operations. Lead operation: Search NIH-funded projects. Self-contained Naftiko
+    capability covering one National Institutes Of Health business surface.'
+  tags:
+  - National Institutes Of Health
+  - Projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NATIONAL_INSTITUTES_OF_HEALTH_API_KEY: NATIONAL_INSTITUTES_OF_HEALTH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: national-institutes-of-health-projects
+    baseUri: https://api.reporter.nih.gov
+    description: NIH RePORTER API — Projects business capability. Self-contained, no shared references.
+    resources:
+    - name: v2-projects-search
+      path: /v2/projects/search
+      operations:
+      - name: searchprojects
+        method: POST
+        description: Search NIH-funded projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: national-institutes-of-health-projects-rest
+    port: 8080
+    description: REST adapter for NIH RePORTER API — Projects. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v2/projects/search
+      name: v2-projects-search
+      description: REST surface for v2-projects-search.
+      operations:
+      - method: POST
+        name: searchprojects
+        description: Search NIH-funded projects
+        call: national-institutes-of-health-projects.searchprojects
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: national-institutes-of-health-projects-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NIH RePORTER API — Projects. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: search-nih-funded-projects
+      description: Search NIH-funded projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: national-institutes-of-health-projects.searchprojects
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
