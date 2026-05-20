@@ -10,42 +10,44 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 tags:
-- Federal Government
-- Health
-- Research
-- Funding
-- Publications
-apis:
-- aid: national-institutes-of-health:reporter-api
-  name: NIH RePORTER API
-  tags:
+  - Federal Government
+  - Health
+  - Research
   - Funding
   - Publications
-  - Research
-  humanURL: https://api.reporter.nih.gov
-  baseURL: https://api.reporter.nih.gov
-  properties:
-  - url: https://api.reporter.nih.gov
-    type: Documentation
-  - url: https://reporter.nih.gov/
-    type: Portal
-  - url: https://raw.githubusercontent.com/api-evangelist/national-institutes-of-health/main/openapi/national-institutes-of-health-openapi.yml
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/national-institutes-of-health-projects.yaml
-  - type: NaftikoCapability
-    url: capabilities/national-institutes-of-health-publications.yaml
-  description: The NIH RePORTER API provides programmatic access to NIH-funded research projects and their associated publications.
-    The Projects endpoint accepts a rich criteria object including fiscal years, principal investigators, organizations, agencies,
-    activity codes, and award amounts. The Publications endpoint accepts PubMed identifiers, application identifiers, and
-    core project numbers.
+apis:
+  - aid: national-institutes-of-health:reporter-api
+    name: NIH RePORTER API
+    tags:
+    - Funding
+    - Publications
+    - Research
+    humanURL: https://api.reporter.nih.gov
+    baseURL: https://api.reporter.nih.gov
+    properties:
+    - url: https://api.reporter.nih.gov
+      type: Documentation
+    - url: https://reporter.nih.gov/
+      type: Portal
+    - url: https://raw.githubusercontent.com/api-evangelist/national-institutes-of-health/main/openapi/national-institutes-of-health-openapi.yml
+      type: OpenAPI
+    - type: NaftikoCapability
+      url: capabilities/national-institutes-of-health-projects.yaml
+    - type: NaftikoCapability
+      url: capabilities/national-institutes-of-health-publications.yaml
+    description: The NIH RePORTER API provides programmatic access to NIH-funded research projects and their associated publications.
+      The Projects endpoint accepts a rich criteria object including fiscal years, principal investigators, organizations, agencies,
+      activity codes, and award amounts. The Publications endpoint accepts PubMed identifiers, application identifiers, and
+      core project numbers.
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/national-institutes-of-health
-- type: Website
-  url: https://www.nih.gov/
-- type: Portal
-  url: https://api.reporter.nih.gov/
+  - type: GitHubOrganization
+    url: https://github.com/NIHGOV
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/national-institutes-of-health
+  - type: Website
+    url: https://www.nih.gov/
+  - type: Portal
+    url: https://api.reporter.nih.gov/
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
