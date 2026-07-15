@@ -39,6 +39,8 @@ apis:
       investigators, organizations, agencies, activity codes, and award amounts. The Publications endpoint accepts
       PubMed identifiers, application identifiers, and core project numbers.
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-institutes-of-health-agentic-access.yml
   - type: DomainSecurity
     url: security/national-institutes-of-health-domain-security.yml
   - type: GitHubOrganization
