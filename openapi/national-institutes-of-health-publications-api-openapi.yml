@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: NIH RePORTER Projects Publications API
+  description: The NIH RePORTER API provides programmatic access to information about NIH-funded research projects and their associated publications. It supports search by fiscal year, principal investigator, organization, funding agency, activity code, project number, application identifier, PubMed identifier, award amount, and free-text criteria.
+  version: 2.0.0
+  contact:
+    name: NIH RePORTER
+    url: https://api.reporter.nih.gov
+servers:
+- url: https://api.reporter.nih.gov
+  description: NIH RePORTER production
+tags:
+- name: Publications
+paths:
+  /v2/publications/search:
+    post:
+      tags:
+      - Publications
+      summary: Search publications associated with NIH projects
+      description: Search publications linked to NIH-funded projects by PubMed identifiers, application identifiers, or core project numbers (with wildcard support).
+      operationId: searchPublications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                criteria:
+                  type: object
+                  properties:
+                    pmids:
+                      type: array
+                      items:
+                        type: integer
+                    appl_ids:
+                      type: array
+                      items:
+                        type: integer
+                    core_project_nums:
+                      type: array
+                      items:
+                        type: string
+                offset:
+                  type: integer
+                  default: 0
+                  maximum: 9999
+                limit:
+                  type: integer
+                  default: 50
+                  maximum: 500
+                sort_field:
+                  type: string
+                sort_order:
+                  type: string
+                  enum:
+                  - asc
+                  - desc
+      responses:
+        '200':
+          description: Paginated publication search results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        coreproject:
+                          type: string
+                        pmid:
+                          type: integer
+                        applid:
+                          type: integer
