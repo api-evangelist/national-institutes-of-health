@@ -1,0 +1,16 @@
+{
+  "provider": "national-institutes-of-health",
+  "sources": [
+    "national-institutes-of-health-projects-api-openapi.yml",
+    "national-institutes-of-health-publications-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-institutes-of-health-projects-api-openapi.yml",
+    "national-institutes-of-health-publications-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

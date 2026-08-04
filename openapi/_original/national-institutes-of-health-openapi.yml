@@ -1,0 +1,193 @@
+openapi: 3.0.3
+info:
+  title: NIH RePORTER API
+  description: >-
+    The NIH RePORTER API provides programmatic access to information about
+    NIH-funded research projects and their associated publications. It
+    supports search by fiscal year, principal investigator, organization,
+    funding agency, activity code, project number, application identifier,
+    PubMed identifier, award amount, and free-text criteria.
+  version: "2.0.0"
+  contact:
+    name: NIH RePORTER
+    url: https://api.reporter.nih.gov
+servers:
+  - url: https://api.reporter.nih.gov
+    description: NIH RePORTER production
+tags:
+  - name: Projects
+  - name: Publications
+paths:
+  /v2/projects/search:
+    post:
+      tags: [Projects]
+      summary: Search NIH-funded projects
+      description: >-
+        Search NIH-funded research projects by fiscal year, agency, principal
+        investigator, organization, activity code, award type, project dates,
+        award amount, advanced text search, COVID response, and other
+        criteria. Supports pagination, sorting, and field selection.
+      operationId: searchProjects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                criteria:
+                  type: object
+                  description: Search criteria for project records.
+                  properties:
+                    fiscal_years:
+                      type: array
+                      items: { type: integer }
+                    project_nums:
+                      type: array
+                      items: { type: string }
+                    pi_names:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          first_name: { type: string }
+                          last_name: { type: string }
+                          any_name: { type: string }
+                    org_names:
+                      type: array
+                      items: { type: string }
+                    agencies:
+                      type: array
+                      items: { type: string }
+                    activity_codes:
+                      type: array
+                      items: { type: string }
+                    award_types:
+                      type: array
+                      items: { type: string }
+                    project_start_date:
+                      type: object
+                      properties:
+                        from_date: { type: string, format: date }
+                        to_date: { type: string, format: date }
+                    project_end_date:
+                      type: object
+                      properties:
+                        from_date: { type: string, format: date }
+                        to_date: { type: string, format: date }
+                    award_notice_date:
+                      type: object
+                      properties:
+                        from_date: { type: string, format: date }
+                        to_date: { type: string, format: date }
+                    award_amount_range:
+                      type: object
+                      properties:
+                        min_amount: { type: number }
+                        max_amount: { type: number }
+                    advanced_text_search:
+                      type: object
+                      properties:
+                        operator: { type: string, enum: [and, or] }
+                        search_field: { type: string }
+                        search_text: { type: string }
+                    covid_response:
+                      type: array
+                      items: { type: string }
+                    date_added:
+                      type: object
+                      properties:
+                        from_date: { type: string, format: date }
+                        to_date: { type: string, format: date }
+                offset:
+                  type: integer
+                  default: 0
+                  maximum: 14999
+                limit:
+                  type: integer
+                  default: 50
+                  maximum: 500
+                sort_field:
+                  type: string
+                sort_order:
+                  type: string
+                  enum: [asc, desc]
+                include_fields:
+                  type: array
+                  items: { type: string }
+                exclude_fields:
+                  type: array
+                  items: { type: string }
+      responses:
+        '200':
+          description: Paginated project search results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                  results:
+                    type: array
+                    items:
+                      type: object
+  /v2/publications/search:
+    post:
+      tags: [Publications]
+      summary: Search publications associated with NIH projects
+      description: >-
+        Search publications linked to NIH-funded projects by PubMed
+        identifiers, application identifiers, or core project numbers
+        (with wildcard support).
+      operationId: searchPublications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                criteria:
+                  type: object
+                  properties:
+                    pmids:
+                      type: array
+                      items: { type: integer }
+                    appl_ids:
+                      type: array
+                      items: { type: integer }
+                    core_project_nums:
+                      type: array
+                      items: { type: string }
+                offset:
+                  type: integer
+                  default: 0
+                  maximum: 9999
+                limit:
+                  type: integer
+                  default: 50
+                  maximum: 500
+                sort_field:
+                  type: string
+                sort_order:
+                  type: string
+                  enum: [asc, desc]
+      responses:
+        '200':
+          description: Paginated publication search results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        coreproject: { type: string }
+                        pmid: { type: integer }
+                        applid: { type: integer }
