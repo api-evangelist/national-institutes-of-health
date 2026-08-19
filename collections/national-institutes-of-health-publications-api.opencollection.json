@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NIH RePORTER Projects Publications API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Publications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search publications associated with NIH projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.reporter.nih.gov/v2/publications/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search publications linked to NIH-funded projects by PubMed identifiers, application identifiers, or core project numbers (with wildcard support)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

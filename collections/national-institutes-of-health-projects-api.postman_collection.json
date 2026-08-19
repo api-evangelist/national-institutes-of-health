@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "fd76bf86-ae3b-44bb-8705-dcca3fd1e00d",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74976eb7-abe7-4bee-9fda-32acd68ce465",
+          "name": "Search NIH-funded projects",
+          "request": {
+            "name": "Search NIH-funded projects",
+            "description": {
+              "content": "Search NIH-funded research projects by fiscal year, agency, principal investigator, organization, activity code, award type, project dates, award amount, advanced text search, COVID response, and other criteria. Supports pagination, sorting, and field selection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "projects",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"criteria\": {\n    \"fiscal_years\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"project_nums\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pi_names\": [\n      {\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"any_name\": \"<string>\"\n      },\n      {\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"any_name\": \"<string>\"\n      }\n    ],\n    \"org_names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agencies\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"activity_codes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"award_types\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"project_start_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"project_end_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"award_notice_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"award_amount_range\": {\n      \"min_amount\": \"<number>\",\n      \"max_amount\": \"<number>\"\n    },\n    \"advanced_text_search\": {\n      \"operator\": \"<string>\",\n      \"search_field\": \"<string>\",\n      \"search_text\": \"<string>\"\n    },\n    \"covid_response\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"date_added\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    }\n  },\n  \"offset\": 0,\n  \"limit\": 50,\n  \"sort_field\": \"<string>\",\n  \"sort_order\": \"<string>\",\n  \"include_fields\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exclude_fields\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "041e4b15-901b-48f2-833e-d02feae0fcae",
+              "name": "Paginated project search results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "projects",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"criteria\": {\n    \"fiscal_years\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"project_nums\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pi_names\": [\n      {\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"any_name\": \"<string>\"\n      },\n      {\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"any_name\": \"<string>\"\n      }\n    ],\n    \"org_names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agencies\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"activity_codes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"award_types\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"project_start_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"project_end_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"award_notice_date\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    },\n    \"award_amount_range\": {\n      \"min_amount\": \"<number>\",\n      \"max_amount\": \"<number>\"\n    },\n    \"advanced_text_search\": {\n      \"operator\": \"<string>\",\n      \"search_field\": \"<string>\",\n      \"search_text\": \"<string>\"\n    },\n    \"covid_response\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"date_added\": {\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\"\n    }\n  },\n  \"offset\": 0,\n  \"limit\": 50,\n  \"sort_field\": \"<string>\",\n  \"sort_order\": \"<string>\",\n  \"include_fields\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exclude_fields\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.reporter.nih.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0f98c5bc-0ac5-4f2c-8594-281e164c81d2",
+    "name": "NIH RePORTER Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NIH RePORTER API provides programmatic access to information about NIH-funded research projects and their associated publications. It supports search by fiscal year, principal investigator, organization, funding agency, activity code, project number, application identifier, PubMed identifier, award amount, and free-text criteria.\n\nContact Support:\n Name: NIH RePORTER",
+      "type": "text/plain"
+    }
+  }
+}

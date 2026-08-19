@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "f63fe8ae-4871-4097-8e82-fe8adc0bb386",
+      "name": "Publications",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d097172-078d-4728-ba7f-0551a00aa63a",
+          "name": "Search publications associated with NIH projects",
+          "request": {
+            "name": "Search publications associated with NIH projects",
+            "description": {
+              "content": "Search publications linked to NIH-funded projects by PubMed identifiers, application identifiers, or core project numbers (with wildcard support).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "publications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"criteria\": {\n    \"pmids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"appl_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"core_project_nums\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"offset\": 0,\n  \"limit\": 50,\n  \"sort_field\": \"<string>\",\n  \"sort_order\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "16eaab7c-6414-4f14-9e63-513e6c62d9c5",
+              "name": "Paginated publication search results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "publications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"criteria\": {\n    \"pmids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"appl_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"core_project_nums\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"offset\": 0,\n  \"limit\": 50,\n  \"sort_field\": \"<string>\",\n  \"sort_order\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {},\n  \"results\": [\n    {\n      \"coreproject\": \"string\",\n      \"pmid\": 4660,\n      \"applid\": 5479\n    },\n    {\n      \"coreproject\": \"string\",\n      \"pmid\": 7666,\n      \"applid\": 6899\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.reporter.nih.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b04685d0-9262-4273-92f4-b896c8cb4dfe",
+    "name": "NIH RePORTER Projects Publications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NIH RePORTER API provides programmatic access to information about NIH-funded research projects and their associated publications. It supports search by fiscal year, principal investigator, organization, funding agency, activity code, project number, application identifier, PubMed identifier, award amount, and free-text criteria.\n\nContact Support:\n Name: NIH RePORTER",
+      "type": "text/plain"
+    }
+  }
+}

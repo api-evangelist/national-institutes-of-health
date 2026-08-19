@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NIH RePORTER Projects API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search NIH-funded projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.reporter.nih.gov/v2/projects/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search NIH-funded research projects by fiscal year, agency, principal investigator, organization, activity code, award type, project dates, award amount, advanced text search, COVID response, and other criteria. Supports pagination, sorting, and field selection."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
