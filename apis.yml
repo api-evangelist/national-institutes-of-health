@@ -23,6 +23,12 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
+  - Federal-Government
+  - Health
+  - Research
+  - Funding
+  - Publications
+tags_raw:
   - Federal Government
   - Health
   - Research
@@ -35,6 +41,8 @@ apis:
   humanURL: https://api.reporter.nih.gov
   baseURL: https://api.reporter.nih.gov
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
