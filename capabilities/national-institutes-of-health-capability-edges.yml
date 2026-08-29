@@ -1,0 +1,38 @@
+slug: national-institutes-of-health
+provider: National Institutes of Health
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Publications
+  spec_file: national-institutes-of-health-publications-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.72
+  evidence: POST /v2/publications/search — 'Search publications associated with NIH projects'
+  reason: The single operation searches scholarly publications linked to funded research projects, matching
+    tracking of scholarly output and its persistent identifiers (PubMed identifier). Confidence tempered
+    because the API is read-only discovery rather than institutional stewardship of output.
+- tag: Projects
+  spec_file: national-institutes-of-health-projects-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.7
+  evidence: POST /v2/projects/search — 'Search NIH-funded projects'; 'information about NIH-funded research
+    projects ... search by fiscal year, principal investigator, organization, funding agency, activity
+    code, project number, application identifier ... award amount'
+  reason: Operations expose funded research project/award data (funding agency, award amount, PI, organisation),
+    which is the grant-and-award portfolio surface of research management rather than any generic IT capability.
+    Sub-capability Research Grant Management fits best, though it is a reporting view over grants rather
+    than award administration itself, hence moderate confidence.

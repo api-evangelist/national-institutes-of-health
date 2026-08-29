@@ -78,6 +78,9 @@ apis:
   - type: Portal
     url: https://reporter.nih.gov/
 common:
+  - type: CapabilityMap
+    url: capabilities/national-institutes-of-health-capability-edges.yml
+    name: National Institutes of Health Business Capability Map
   - type: AgenticAccess
     url: agentic-access/national-institutes-of-health-agentic-access.yml
   - type: DomainSecurity
