@@ -5,6 +5,17 @@ description: >-
   medical research agency making important discoveries that improve health and save lives. NIH operates the RePORTER API
   for exposing data about NIH-funded research projects and the publications associated with them.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
