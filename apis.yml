@@ -34,7 +34,7 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
-  - Federal-Government
+  - Federal Government
   - Health
   - Research
   - Funding
@@ -45,6 +45,7 @@ tags_raw:
   - Research
   - Funding
   - Publications
+  - Federal-Government
 apis:
 - aid: national-institutes-of-health:national-institutes-of-health-projects-api
   name: National Institutes of Health Projects API
