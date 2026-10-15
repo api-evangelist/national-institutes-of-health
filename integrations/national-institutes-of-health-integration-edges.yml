@@ -75,8 +75,55 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-higher-ed.py
   first_seen: '2026-10-15'
+- partner_name: identifiers.org registry (resources)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://registry.identifiers.org/registry
+  match:
+    method: domain+name-among-holders
+    domain: nih.gov
+    seen_as:
+    - institution homeUrl
+    registered_as:
+    - National Center for Complementary and Integrative Health, National Institutes of Health, Washington D.C.
+  life_sciences:
+    register: idorg
+    listings:
+    - prefix: napdi
+      mir: MIR:00100824
+      resource: Natural Product-Drug Interaction Research Data Repository
+      official: false
+    listings_total: 1
+    signals:
+    - napdi
+  contract_reference:
+    register: identifiers.org registry (resources)
+    spec_file: null
+    role: identifiers-resource
+    registered_name: National Center for Complementary and Integrative Health, National Institutes of Health, Washington
+      D.C.
+    register_id: National Center for Complementary and Integrative Health, National Institutes of Health, Washington
+      D.C.
+    matched_domain: nih.gov
+    detected_by: sweep-life-sciences.py
+    detected: '2026-10-15'
+  detected_by: sweep-life-sciences.py
+  first_seen: '2026-10-15'
 generated: '2026-10-15'
 method: searched
 checked:
+- https://bio.tools/api/tool/?format=json&toolType=%22Web%20API%22&page=1
+- https://registry.api.identifiers.org/resolutionApi/getResolverDataset
+- https://registry.ga4gh.org/v1/implementations
+- https://registry.ga4gh.org/v1/services
 - https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
 - https://technical.edugain.org/api.php?action=list_entities&type=sp&format=json
+source:
+- https://bio.tools/api/tool/?format=json&toolType=%22Web%20API%22&page=1
+- https://registry.api.identifiers.org/resolutionApi/getResolverDataset
+- https://registry.ga4gh.org/v1/implementations
+- https://registry.ga4gh.org/v1/services

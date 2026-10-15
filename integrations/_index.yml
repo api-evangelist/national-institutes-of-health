@@ -80,3 +80,24 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: national-institutes-of-health-identifiers-org-registry-resources
+  label: identifiers.org registry (resources)
+  partner_name: identifiers.org registry (resources)
+  type: register
+  channel: standard-directory
+  evidence: https://registry.identifiers.org/registry
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: identifiers.org registry (resources)
+    spec_file: null
+    role: identifiers-resource
+    registered_name: National Center for Complementary and Integrative Health, National Institutes of Health, Washington
+      D.C.
+    register_id: National Center for Complementary and Integrative Health, National Institutes of Health, Washington
+      D.C.
+    matched_domain: nih.gov
+    detected_by: sweep-life-sciences.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
