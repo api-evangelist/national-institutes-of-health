@@ -1,4 +1,4 @@
-# National Institutes of Health (national-institutes-of-health)
+# National Institutes of Health
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,115 @@
 
 The National Institutes of Health (NIH), a part of the U.S. Department of Health and Human Services, is the nation's medical research agency making important discoveries that improve health and save lives. NIH operates the RePORTER API for exposing data about NIH-funded research projects and the publications associated with them.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/national-institutes-of-health/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/national-institutes-of-health/refs/heads/main/apis.yml)
+**Areas:** Federal Government · Health · Research · Funding · Publications
 
-## Scope
+## National Institutes of Health on APIs.io
 
-- **Type:** Index
+Everything profiled for National Institutes of Health is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/national-institutes-of-health/](https://apis.io/providers/national-institutes-of-health/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Federal Government
-- Health
-- Research
-- Funding
-- Publications
+- [National Institutes of Health Projects API](https://apis.io/apis/national-institutes-of-health/national-institutes-of-health-projects-api/) — The Projects API from National Institutes of Health — 1 operation(s) for projects.
+- [National Institutes of Health Publications API](https://apis.io/apis/national-institutes-of-health/national-institutes-of-health-publications-api/) — The Publications API from National Institutes of Health — 1 operation(s) for publications.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### NIH RePORTER API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The NIH RePORTER API provides programmatic access to NIH-funded research projects and their associated publications. The Projects endpoint accepts a rich criteria object including fiscal years, principal investigators, organizations, agencies, activity codes, and award amounts. The Publications endpoint accepts PubMed identifiers, application identifiers, and core project numbers.
+- [National Institutes Of Health Agentic Access](https://apis.io/agentic-access/national-institutes-of-health/national-institutes-of-health-agentic-access/)
 
-- **Human URL:** [https://api.reporter.nih.gov](https://api.reporter.nih.gov)
-- **Base URL:** `https://api.reporter.nih.gov`
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Funding
-- Publications
-- Research
+- [NIH RePORTER API](https://apis.io/collections/national-institutes-of-health/open-national-institutes-of-health/)
+- [NIH RePORTER Projects API](https://apis.io/collections/national-institutes-of-health/open-national-institutes-of-health-projects-api/)
+- [NIH RePORTER Projects Publications API](https://apis.io/collections/national-institutes-of-health/open-national-institutes-of-health-publications-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://api.reporter.nih.gov)
-- [Portal](https://reporter.nih.gov/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/national-institutes-of-health/main/openapi/national-institutes-of-health-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/national-institutes-of-health.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/national-institutes-of-health.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [National Institutes Of Health Domain Security](https://apis.io/security/national-institutes-of-health/national-institutes-of-health-domain-security/)
 
-- [GitHub Organization](https://github.com/NIHGOV)
-- [LinkedIn](https://www.linkedin.com/company/national-institutes-of-health)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [National Institutes Of Health Plans Pricing](https://apis.io/plans/national-institutes-of-health/national-institutes-of-health-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [National Institutes Of Health Rate Limits](https://apis.io/rate-limits/national-institutes-of-health/national-institutes-of-health-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [National Institutes Of Health Finops](https://apis.io/finops/national-institutes-of-health/national-institutes-of-health-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.nih.gov/)
-- [Portal](https://api.reporter.nih.gov/)
+- [GitHub](https://github.com/NIHGOV)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/national-institutes-of-health/](https://apis.io/providers/national-institutes-of-health/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for National Institutes of Health: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/national-institutes-of-health/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
